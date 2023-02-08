@@ -2,19 +2,23 @@ package org.example;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 public class Files {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String path="C:\\Users\\Tringapps-user4\\Documents\\Paragraph.txt";
-        File file = new File(path);
+        // path="C:\\Users\\Tringapps-user4\\Documents\\Paragraph.txt";
+
+        Scanner s=new Scanner(System.in);
         Logger l=Logger.getLogger("com.api.jar");
         HashMap<String,Integer> map = new HashMap<>();
 
+        l.info("Enter the path");
+        String path=s.next();
+        File file = new File(path);
         Scanner sc = new Scanner(file);
         String word;
+
         while(sc.hasNext())
         {
             word = sc.next();
